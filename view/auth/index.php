@@ -8,7 +8,7 @@
 <body>
 
 <div class="container mt-5">
-    <h2>Welcome, <?= htmlspecialchars($user['fullname']) ?>!</h2>
+    <h2>Welcome, <?= htmlspecialchars($user['name']) ?>!</h2>
     <p>You are logged in with email: <?= htmlspecialchars($user['email']) ?></p>
 
     <a href="index.php?controller=auth&action=logout" class="btn btn-danger mt-3">Logout</a>

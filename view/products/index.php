@@ -27,6 +27,8 @@ $products = $controller->search($conn,$searchTerm);
             <h3>ALL PRODUCTS
                 <a href="index.php?controller=product&action=create" class="btn btn-primary float-end">Add Product</a>
                 <a href="index.php?controller=category&action=index" class="btn btn-secondary">Go to Categories</a>
+
+                <a href="index.php?controller=auth&action=index" class="btn btn-danger float-end ms-2">Logout</a>
             </h3>
             <form method="GET" action="index.php">
                 <input type="hidden" name="controller" value="product">
