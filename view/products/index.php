@@ -33,6 +33,7 @@ $products = $controller->search($conn,$searchTerm);
                 <input type="hidden" name="action" value="search">
                 <input type="text" name="search" placeholder="Search Products" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
                 <button type="submit">Search</button>
+                <a href="index.php?controller=product&action=index" class="btn btn-secondary">Go to Categories</a>
             </form>
         </div>
         <div class="card-body"></div>
