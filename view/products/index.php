@@ -1,6 +1,11 @@
 <?php session_start();
 include('dbcon.php');
 
+
+$controller = new ProductController();
+$searchTerm= $_GET['search'] ?? '';
+$products = $controller->search($conn,$searchTerm);
+
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +28,12 @@ include('dbcon.php');
                 <a href="index.php?controller=product&action=create" class="btn btn-primary float-end">Add Product</a>
                 <a href="index.php?controller=category&action=index" class="btn btn-secondary">Go to Categories</a>
             </h3>
+            <form method="GET" action="index.php">
+                <input type="hidden" name="controller" value="product">
+                <input type="hidden" name="action" value="search">
+                <input type="text" name="search" placeholder="Search Products" value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+                <button type="submit">Search</button>
+            </form>
         </div>
         <div class="card-body"></div>
             <table class="table table-bordered table-striped">

@@ -1,5 +1,4 @@
 <?php
-
 // Database connection
 require_once 'dbcon.php'; // adjust path if needed
 
@@ -9,6 +8,18 @@ $action = $_GET['action'] ?? 'index';           // default = index
 
 $controllerName = ucfirst($controller) . 'Controller';
 $controllerFile = 'controller/' . $controllerName . '.php';
+
+if ($_GET['controller'] == 'product' && $_GET['action'] == 'search') {
+    require_once 'dbcon.php';
+    require_once 'controller/ProductController.php';
+
+    require_once 'dbcon.php';
+    $controller = new ProductController();
+    $searchTerm = $_GET['search'] ?? '';
+    $products = $controller->search($conn, $searchTerm);
+
+    require_once 'view/products/index.php';
+}
 
 if (file_exists($controllerFile)) {
     require_once $controllerFile;

@@ -88,6 +88,16 @@ class ProductController{
         header("Location: index.php?controller=product&action=index");
         
     }
+
+    public function search($conn, $searchTerm) {
+    $query = "SELECT products.*, categories.name AS category_name 
+              FROM products 
+              LEFT JOIN categories ON products.category_id = categories.category_id 
+              WHERE products.name LIKE :search OR products.description LIKE :search";
+    $stmt = $conn->prepare($query);
+    $stmt->execute([':search' => "%$searchTerm%"]);
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+}
     
 
 

@@ -21,6 +21,7 @@ include('dbcon.php');
         <div class="card-header">
             <h3>ALL CATEGORIES
                 <a href="index.php?controller=category&action=create" class="btn btn-primary float-end">Add Category</a>
+                <a href="index.php?controller=product&action=index" class="btn btn-secondary">Go to Products</a>
             </h3>
         </div>
         <div class="card-body"></div>

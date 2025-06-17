@@ -19,9 +19,11 @@
                 <input type="number" name="price" placeholder="Price" required><br>
                 <input type="file" name="image"><br>
                 <select name="category_id">
-                    <option value="1">Electronics</option>
-                    <option value="2">Clothing</option>
-                    <option value="2">Condiments</option>
+                    <option value="1">Condiments</option>
+                    <option value="2">Electronics</option>
+                    <option value="3">Clothing</option>
+                    <option value="4">Cold Drinks</option>
+                    <option value="5">Food</option>
                 </select><br>
                 <button type="submit">Save</button>
             </form>
