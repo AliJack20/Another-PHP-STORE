@@ -24,6 +24,7 @@
                     <option value="3">Clothing</option>
                     <option value="4">Cold Drinks</option>
                     <option value="5">Food</option>
+                    <option value="6">Sports</option>
                 </select><br>
                 <button type="submit">Save</button>
             </form>

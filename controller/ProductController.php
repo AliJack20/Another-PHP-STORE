@@ -30,6 +30,8 @@ class ProductController{
     $id = $_GET['id'];
     $stmt = $conn->prepare("SELECT * FROM products WHERE id = ?");
     $stmt->execute([$id]);
+    $cat_stmt = $conn->query("SELECT * FROM categories");
+    $categories = $cat_stmt->fetchAll(PDO::FETCH_OBJ);
     $product = $stmt->fetch(PDO::FETCH_OBJ);
 
     include 'view/products/edit.php';
