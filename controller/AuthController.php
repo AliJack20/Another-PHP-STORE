@@ -7,7 +7,7 @@ class AuthController{
         include 'view/auth/login.php';
 
     }
-
+// checking if the pull works
 
     public function login() {
     global $conn;
