@@ -36,7 +36,7 @@ class MemberController{
     public function update() {
     global $conn;
 
-    if (git push -u origin mainisset($_POST['id'])) {
+    if (isset($_POST['id'])) {
         $stmt = $conn->prepare("UPDATE member SET id = ?, fullname = ?, email = ? password = ? WHERE id = ?");
         $stmt->execute([
             $_POST['id'],
