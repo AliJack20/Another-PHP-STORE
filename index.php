@@ -1,10 +1,10 @@
 <?php
 // Database connection
-require_once 'dbcon.php'; // adjust path if needed
+require_once 'dbcon.php'; 
 
 // Controller and action from URL
-$controller = $_GET['controller'] ?? 'Auth'; // default = product
-$action = $_GET['action'] ?? 'index';           // default = index
+$controller = $_GET['controller'] ?? 'Auth';
+$action = $_GET['action'] ?? 'index';          
 
 $controllerName = ucfirst($controller) . 'Controller';
 $controllerFile = 'controller/' . $controllerName . '.php';
