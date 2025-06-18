@@ -41,7 +41,7 @@ $products = $controller->search($conn,$searchTerm);
             <table class="table table-bordered table-striped">
                 <thread>
                     <tr> 
-                        <th>ID</th>
+                        <th>S.NO</th>
                         <th>name</th>
                         <th>description</th>
                         <th>price</th>
@@ -53,9 +53,9 @@ $products = $controller->search($conn,$searchTerm);
                 </thread>
                 <tbody>
                     <?php if ($products): ?>
-                        <?php foreach ($products as $row): ?>
+                        <?php foreach ($products as $key=>$row): ?>
                             <tr>
-                                <td><?= $row->id; ?></td>
+                                <td><?= ++$key; ?></td>
                                 <td><?= $row->name; ?></td>
                                 <td><?= $row->description; ?></td>
                                 <td><?= $row->price; ?></td>
