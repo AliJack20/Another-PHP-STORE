@@ -1,5 +1,5 @@
 <?php
-// Database connection
+
 require_once 'dbcon.php'; 
 
 // Controller and action from URL

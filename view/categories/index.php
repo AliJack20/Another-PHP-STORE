@@ -28,7 +28,7 @@ include('dbcon.php');
             <table class="table table-bordered table-striped">
                 <thread>
                     <tr> 
-                        <th>Category S.NO</th>
+                        <th>S.NO</th>
                         <th>name</th>
                         <th>parent_id</th>
                         <th colspan="2">Actions</th>
@@ -38,9 +38,9 @@ include('dbcon.php');
                 </thread>
                 <tbody>
                     <?php if ($categories): ?>
-                        <?php foreach ($categories as $row): ?>
+                        <?php foreach ($categories as $key=>$row): ?>
                             <tr>
-                                <td><?= $row->category_id; ?></td>
+                                <td><?= ++$key; ?></td>
                                 <td><?= $row->name; ?></td>
                                 <td><?= $row->parent_id; ?></td>
                                 <td>

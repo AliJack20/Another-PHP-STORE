@@ -34,15 +34,17 @@ class AuthController{
                 exit();
             } else {
                 $error = "Invalid email or password.";
+                echo $error;
             }
 
         } else {
             $error = "Invalid email or password.";
+            echo $error;
         }
 
-        include 'views/auth/login.php';
+        include 'view/auth/login.php';
     } else {
-        include 'views/auth/login.php';
+        include 'view/auth/login.php';
     }
 }
 
