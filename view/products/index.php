@@ -88,5 +88,78 @@ $products = $controller->search($conn,$searchTerm);
 </head>
 <body>
 
+<!-- Chatbot Floating Button -->
+<button id="openChatbot" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+">
+    💬
+</button>
+
+<!-- Chatbot Modal -->
+<div id="chatbotModal" style="
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+">
+    <div style="
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-width: 700px;
+        height: 80%;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+    ">
+        <button id="closeChatbot" style="
+            position: absolute;
+            top: 10px; right: 15px;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            color: #555;
+            cursor: pointer;
+            z-index: 10;
+        ">&times;</button>
+        <iframe
+            src="https://www.chatbase.co/chatbot-iframe/8wYpM4aTleM8HD76ykcC2"
+            width="100%"
+            height="100%"
+            style="border: none;"
+        ></iframe>
+    </div>
+</div>
+
+<!-- JS for Chatbot Modal -->
+<script>
+document.getElementById('openChatbot').onclick = function() {
+    document.getElementById('chatbotModal').style.display = 'block';
+};
+document.getElementById('closeChatbot').onclick = function() {
+    document.getElementById('chatbotModal').style.display = 'none';
+};
+window.onclick = function(e) {
+    if (e.target == document.getElementById('chatbotModal')) {
+        document.getElementById('chatbotModal').style.display = 'none';
+    }
+};
+</script>
+
+
 </body>
 </html>

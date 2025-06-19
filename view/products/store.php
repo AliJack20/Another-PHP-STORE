@@ -25,6 +25,7 @@
                     <option value="4">Cold Drinks</option>
                     <option value="5">Food</option>
                     <option value="6">Sports</option>
+                    <option value="7">Furniture</option>
                 </select><br>
                 <button type="submit">Save</button>
             </form>
